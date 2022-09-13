@@ -8,14 +8,16 @@
   "private": true,
   "scripts": {
     "dev": "vite --port 8080",
-    "srv" : "nodemon server/index.js",
+    "srv": "nodemon server/index.js",
     "prod": "vite build && nodemon server/index.js"
   },
   "dependencies": {
     "express": "^4.18.1",
     "nodemon": "^2.0.19",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
