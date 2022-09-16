@@ -9,7 +9,12 @@
   "scripts": {
     "dev": "vite --port 8080",
     "srv": "nodemon server/index.js",
-    "prod": "vite build && nodemon server/index.js"
+    "prod": "vite build && nodemon server/index.js",
+    "lint:c": "eslint \"client/**/*.{js,jsx}\" --quiet",
+    "lint:s": "eslint \"server/**/*.js\" --quiet",
+    "format:c": "prettier --write \"client/**/*.{js,jsx}\"",
+    "format:s": "prettier --write \"server/**/*.js\"",
+    "format:check": "prettier --check \"client/**/*.{js,jsx}\""
   },
   "dependencies": {
     "express": "^4.18.1",
@@ -23,6 +28,12 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
     "vite": "^3.1.0"
   }
 }

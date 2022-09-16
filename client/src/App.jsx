@@ -1,15 +1,14 @@
-import { useEffect } from 'react'
-import socket  from '../utils/socket'
+import { useEffect } from "react";
+import socket from "../utils/socket";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
-  useEffect(()=>{
+  useEffect(() => {
     socket.on("connect", () => {
       console.log(socket.id);
     });
-  }, [])
+  }, []);
 }
 
-export default App
+export default App;
