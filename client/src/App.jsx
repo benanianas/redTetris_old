@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, Routes, Route, BrowserRouter } from "react-router-dom";
+import Tetris from "./components/Tetris.jsx";
 
 const App = () => {
   return (
@@ -7,7 +8,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/">
-            <Route index element={<Login />} />
+            <Route index element={<Tetris />} />
             <Route path=":id" element={<Game />} />
           </Route>
           <Route path="*" element={<Error />} />
@@ -19,9 +20,9 @@ const App = () => {
 
 export default App;
 
-const Login = () => {
-  return <h1>Create a logine to play</h1>;
-};
+// const Login = () => {
+//   return <h1>Create a logine to play</h1>;
+// };
 
 const Error = () => {
   return <h1>Error Page</h1>;
