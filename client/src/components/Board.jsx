@@ -1,13 +1,14 @@
 import React from "react";
 import Block from "./Block.jsx";
+import StyledBoard from "./styles/StyledBoard.jsx";
 
 const Board = ({board}) => {
     return (
-        <div>
+        <StyledBoard>
             {
                 board.map(row => row.map((block, i) => <Block key={i} type={block}/>))
             }
-        </div>
+        </StyledBoard>
     )
 }
 

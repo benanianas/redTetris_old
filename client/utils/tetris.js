@@ -3,11 +3,15 @@ export const T_HEIGHT = 20;
 
 export const createBoard = () => Array.from(Array(T_HEIGHT), () => new Array(T_WIDTH).fill(0));
 
-export const tertriminos = {
+export const TETRIMINOS = {
+  0: {
+    shape: [[0]],
+    color: "",
+  },
   I: {
     shape: [
       [0, 0, 0, 0],
-      [1, 1, 1, 1],
+      ['I', 'I', 'I', 'I'],
       [0, 0, 0, 0],
       [0, 0, 0, 0],
     ],
@@ -16,47 +20,47 @@ export const tertriminos = {
   J: {
     shape: [
       [0, 0, 0],
-      [1, 0, 0],
-      [1, 1, 1],
+      ['J', 0, 0],
+      ['J', 'J', 'J'],
     ],
     color: "#000073",
   },
   L: {
     shape: [
       [0, 0, 0],
-      [0, 0, 1],
-      [1, 1, 1],
+      [0, 0, 'L'],
+      ['L', 'L', 'L'],
     ],
     color: "#b45700",
   },
   O: {
     shape: [
-      [1, 1],
-      [1, 1],
+      ['O', 'O'],
+      ['O', 'O'],
     ],
     color: "#efaa00",
   },
   S: {
     shape: [
       [0, 0, 0],
-      [0, 1, 1],
-      [1, 1, 0],
+      [0, 'S', 'S'],
+      ['S', 'S', 0],
     ],
     color: "#009900",
   },
   T: {
     shape: [
       [0, 0, 0],
-      [0, 1, 0],
-      [1, 1, 1],
+      [0, 'T', 0],
+      ['T', 'T', 'T'],
     ],
     color: "#660066",
   },
   Z: {
     shape: [
       [0, 0, 0],
-      [1, 1, 0],
-      [0, 1, 1],
+      ['Z', 'Z', 0],
+      [0, 'Z', 'Z'],
     ],
     color: "#990000",
   },

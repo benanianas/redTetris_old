@@ -1,9 +1,10 @@
 import React from "react";
+import { StyledBlock } from "./styles/StyledBlock.jsx";
+import { TETRIMINOS } from "../../utils/tetris.js";
 
-// eslint-disable-next-line no-unused-vars
 const Block = ({type}) => {
     return (
-        <div>block {type}</div>
+        <StyledBlock color={TETRIMINOS[type].color}>block:{type} {TETRIMINOS[type].color}</StyledBlock>
     )
 }
 
