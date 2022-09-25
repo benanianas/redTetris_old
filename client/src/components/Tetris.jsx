@@ -1,13 +1,23 @@
 import React from "react";
-import Board from "./Board.jsx"
-
-import { createBoard } from "../../utils/tetris.js"
+import Board from "./Board.jsx";
+import TetrisContainer from "./styles/TetrisContainer.jsx";
+import useGame from "../hooks/useGame"
 
 const Tetris = () => {
-    return (
-        <div><Board board={createBoard()}/></div>
-    )
-}
-
+  const [board, rotate, move] = useGame();
+  const gameControl = ({ keyCode }) => {
+    if (keyCode === 13) console.log("start");
+    if (keyCode === 37) move(0, -1);
+    else if (keyCode === 39) move(0, 1);
+    else if (keyCode === 40) move(1, 0);
+    else if (keyCode === 38) rotate();
+    else if (keyCode === 32) console.log("hbaaat awa hbat");
+  };
+  return (
+    <TetrisContainer tabIndex="0" onKeyDown={(e) => gameControl(e)}>
+      <Board board={board} />
+    </TetrisContainer>
+  );
+};
 
 export default Tetris;
