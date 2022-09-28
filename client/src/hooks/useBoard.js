@@ -5,7 +5,7 @@ import { T_HEIGHT, T_WIDTH } from "../../utils/tetris.js";
 const useBoard = () => {
   const [board, setBoard] = useState(createBoard());
 
-  const updateBoard = (tetromino) => {
+  const updateBoard = (tetro) => {
     const newBoard = board.map((arr) => arr.slice());
 
     for (let row = 0; row < T_HEIGHT; row++)
@@ -14,15 +14,17 @@ const useBoard = () => {
           ? (newBoard[row][col] = { type: 0, merged: false })
           : null;
 
-    tetromino.shape.map((row, i) =>
+    tetro.shape.map((row, i) =>
       row.map((elm, j) => {
         if (elm !== 0)
-          newBoard[i + tetromino.x][j + tetromino.y] = {
+          newBoard[i + tetro.x][j + tetro.y] = {
             type: elm,
-            merged: false,
+            merged: tetro.merged,
           };
       })
     );
+    // if(tetro.merged)
+      
 
     setBoard(newBoard);
   };

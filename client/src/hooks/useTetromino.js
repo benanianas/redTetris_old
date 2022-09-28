@@ -3,16 +3,13 @@ import { randomTetromino } from "../../utils/tetris";
 import useBoard from "./useBoard";
 import { useEffect } from "react";
 
-
-
 const useTetromino = () => {
   const [board, updateBoard] = useBoard();
 
-  const shape = randomTetromino().shape;
   const [tetromino, setTetromino] = useState({
     x: 0,
     y: 3,
-    shape: shape,
+    shape: randomTetromino().shape,
     merged: false,
   });
 
@@ -20,7 +17,23 @@ const useTetromino = () => {
     updateBoard(tetromino);
   }, [tetromino]);
 
-  return [board, tetromino, setTetromino];
+  const updateTetromino = (tetromino) => {
+    setTetromino(tetromino);
+    
+    if (tetromino.merged)
+      setTimeout(
+        () =>
+          setTetromino({
+            x: 0,
+            y: 3,
+            shape: randomTetromino().shape,
+            merged: false,
+          }),
+        400
+      );
+  };
+
+  return [board, tetromino, updateTetromino];
 };
 
 export default useTetromino;
