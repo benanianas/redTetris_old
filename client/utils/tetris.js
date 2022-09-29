@@ -72,5 +72,5 @@ export const TETRIMINOS = {
 export const randomTetromino = () => {
   const all = ["I", "J", "L", "O", "S", "T", "Z"];
   return TETRIMINOS[all[Math.floor(Math.random() * all.length)]];
-  // return TETRIMINOS["I"];
+  // return TETRIMINOS["T"];
 };

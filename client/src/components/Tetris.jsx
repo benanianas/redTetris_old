@@ -4,9 +4,9 @@ import TetrisContainer from "./styles/TetrisContainer.jsx";
 import useGame from "../hooks/useGame"
 
 const Tetris = () => {
-  const [board, rotate, move, down] = useGame();
+  const [board, start, rotate, move, down] = useGame();
   const gameControl = ({ keyCode }) => {
-    if (keyCode === 13) console.log("start");
+    if (keyCode === 13) start();
     if (keyCode === 37) move(0, -1);
     else if (keyCode === 39) move(0, 1);
     else if (keyCode === 40) move(1, 0);
